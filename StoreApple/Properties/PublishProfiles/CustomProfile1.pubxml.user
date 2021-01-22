@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Huflit\HK1-2020-2021\Bán hàng\Host</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL5060.site4now.net%3bInitial Catalog=DB_A69F7B_hangchien7887%3bUser Id=DB_A69F7B_hangchien7887_admin%3bPassword=9121999Tu</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="StoreApple.Data.DataContext">
+      <Value>Data Source=SQL5060.site4now.net%3bInitial Catalog=DB_A69F7B_hangchien7887%3bUser Id=DB_A69F7B_hangchien7887_admin%3bPassword=9121999Tu</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

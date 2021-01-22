@@ -1,0 +1,187 @@
+﻿@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Design By Team S.T</title>
+        <link rel="stylesheet" href="style/all.css">
+
+        <link rel="stylesheet" href="~/style/2.css">
+        <link rel="stylesheet" href="~/style/3.css">
+
+        <link rel="stylesheet" href="~/style/1.css">
+
+        <link rel="stylesheet" href="~/style/style.css">
+
+
+        <script src="~/js/2.js"></script>
+        <script src="~/js/3.js"></script>
+        <script src="~/js/1.js"></script>
+
+        <script type="text/javascript" src="js/manjs.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <div class="nav-menu flex-row">
+                    <div class="nav-brand">
+                        <a href="index.html" class="text-gray">Blooger</a>
+                    </div>
+                    <div class="toggle-collapse">
+                        <div class="toggle-icons">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="nav-items">
+                            <li class="nav-link">
+                                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-link">
+                                <a asp-area="" asp-controller="Home" asp-action="category">Category</a>
+                            </li>
+
+
+                            <li class="nav-link">
+                                <a asp-controller="Home" asp-action="contact">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="social text-gray">
+                        <a asp-controller="Home" asp-action="login"><span class="login">Login</span></a>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div >
+            <main>
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                    <h2>About us</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis itaque amet quo cupiditate doloremque qui,
+                        a similique, dolores ipsa ex aliquid earum voluptas provident odio. Possimus eveniet accusantium sint harum.
+                    </p>
+                </div>
+                <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                    <h2>Newsletter</h2>
+                    <p>Stay update with our latest</p>
+                    <div class="form-element">
+                        <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+                <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Instagram</h2>
+                    <div class="flex-row">
+                        <img src="~/image/instagram/img1.png" alt="IG1">
+                        <img src="~/image/instagram/img2.png" alt="IG2">
+                        <img src="~/image/instagram/img3.png" alt="IG3">
+                    </div>
+                    <div class="flex-row">
+                        <img src="~/image/instagram/img4.png" alt="IG4">
+                        <img src="~/image/instagram/img5.png" alt="IG5">
+                        <img src="~/image/instagram/img6.png" alt="IG6">
+                    </div>
+                </div>
+                <div class="follow" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Follow us</h2>
+                    <p>Let us be Social</p>
+                    <div>
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="rights flex-row">
+                <h4 class="text-gray">
+                    Độc quyền tại
+                    <a href="https://huflit.edu.vn/" target="_black">Team S.T <i class="fab fa-facebook"></i></a>
+                </h4>
+            </div>
+            <div class="move-up">
+                <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+            </div>
+        </footer>
+    </body>
+    </html>*@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lab04</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LKT-Shop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Product" asp-action="Index">Sản phẩm</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Chinh sách bảo mật</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div><i class="fab fa-facebook-messenger"></i></div>
+            &copy; Edit by LKT-SHOP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/jsAD/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

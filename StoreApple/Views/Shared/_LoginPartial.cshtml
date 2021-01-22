@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<StoreApple.Models.Domain.User> SignInManager
+@inject UserManager<StoreApple.Models.Domain.User> UserManager
+
+
+<ul style="float:right;margin-top: 0px;">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Home"
+               asp-action="Index"
+               title="Welcome">Welcome @User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-controller="Account"
+                  asp-action="Logout" asp-area="">
+                <button type="submit"  style="padding-top: 0px;padding-left: 130px;border: none;background:rgba(255,0,0,0);">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Account"
+               asp-action="Login">Login</a>
+        </li>
+        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Account"
+               asp-action="Register">Register</a>
+        </li>*@
+    }
+</ul>

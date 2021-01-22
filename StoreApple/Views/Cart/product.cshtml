@@ -1,0 +1,54 @@
+﻿@model List<ProductModel>
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <main>
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>All Products</h2>
+                <select>
+                    <option value="">Default Shorting</option>
+                    <option value="">Short by price</option>
+                    <option value="">Short by popular</option>
+                    <option value="">Short by rating</option>
+                    <option value="">Short by sale</option>
+                </select>
+            </div>
+
+            <div class="row" style="flex-wrap: wrap;">
+                @foreach (var item in Model)
+                {
+                <div class="col-4">
+                    <a asp-controller="Detail" asp-action="Index" asp-route-id="@item.ProductId" asp-route-name="@item.ProductName">
+
+                        <img src="~/images/@item.ProductImage">
+                        <h4>@item.ProductName</h4>
+                    </a>
+                    <div class="rating">
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star-o"></div></i>
+                    </div>
+                    <p>@item.ProductPrice</p>
+                    <div>
+                        <a asp-controller="Detail" asp-action="Index" asp-route-id="@item.ProductId" asp-route-name="@item.ProductName" class="btn">Details</a> |
+
+                        <a asp-controller="Cart" asp-action="Buy" asp-route-id="@item.ProductId" class="btn">Buy now</a>
+                    </div>
+                </div>
+                    }
+            </div>
+            <div class="page-btn">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>&#8594;</span>
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,43 @@
+﻿@model StoreApple.Models.UserLoginModel
+
+
+@{
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/style/login.css" rel="stylesheet" />
+    <title></title>
+
+</head>
+<body>
+
+
+    <main>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()"> <a asp-action="Login" asp-controller="Account">Login </a></button>
+                    <button type="button" class="toggle-btn" onclick="register()"> <a asp-action="Register" asp-controller="Account">Register </a> </button>
+                </div>
+                <form id="login" class="input-group" asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]">
+                    <input type="text" class="input-field" placeholder="Email" asp-for="Email" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" asp-for="Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span> @Html.DisplayNameFor(model => model.RememberMe)
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            
+
+
+            </div>
+</main>
+   
+
+
+    @section Scripts {
+        <script src="~/js/js.js"></script>
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

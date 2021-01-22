@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            @foreach (var item in ViewBag.cart)
+            {
+                <tr>
+                    <td>@item.ProductModel.ProductId</td>
+                    <td>
+                        <div class="cart-info">
+                            <img src="~/images/@item.ProductModel.ProductImage">
+                            <div>
+                                <p>@item.ProductModel.ProductName</p>
+                                <small>@item.ProductModel.ProductPrice</small>
+                                <a asp-controller="cart" asp-action="remove" asp-route-id="@item.ProductModel.ProductId">Remove</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.ProductModel.ProductPrice * item.Quantity)</td>
+                </tr>
+
+            }
+        </table>
+
+        <div class="total-price">
+            <table>
+                @*<tr>
+                    <td>Subtotal</td>
+                    <td>@ViewBag.total</td>
+                </tr>*@
+                <tr>
+                    <td>Total</td>
+                    <td>@ViewBag.total</td>
+                </tr>
+            </table>
+        </div>
+        <a asp-controller="Cart" asp-action="checkout" style="float:right">Check Out</a>
+    </div>
+

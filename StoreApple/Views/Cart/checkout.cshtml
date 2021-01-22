@@ -1,0 +1,62 @@
+﻿@model StoreApple.Models.ProductModel
+@{
+    ViewData["Title"] = "checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Thanh toán</h1>
+<div class="contact" style="background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">
+    <div class='bodybox' style="float:right; border:solid;border-radius: 5px; margin-right:5%; margin-top:5%;">
+        <div class='chatborder'>
+            <p class="chatbot">CHAT BOT</p>
+            <p class="chatlog">&nbsp;</p>
+            <p class="chatlog">&nbsp;</p>
+            <p class="chatlog">&nbsp;</p>
+            <p class="chatlog">&nbsp;</p>
+            <p class="chatlog">&nbsp;</p>
+            <p class="chatlog">&nbsp;</p>
+            <p class="chatlog">&nbsp;</p>
+            <input type="text" name="chat" class="chatbox" placeholder="Hi there! " onfocus="placeHolder()">
+        </div>
+    </div>
+    <form  asp-controller="Cart" asp-action="check" method="post" enctype="multipart/form-data">
+        <div style="padding-left:35%;">
+            <div>
+                <div>
+                    <p>Name :</p>
+                    <input type="text" id="Ten" asp-for="Ten" placeholder="Your Name" required style="border:none; background: rgba(255,0,0,0);border-bottom: 1.5px solid #16b4b9;">
+                </div>
+                <span asp-validation-for="Ten" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div>
+                <div>
+                    <p>Email :</p>
+                    <input type="email" id="Email" asp-for="Email" placeholder="Your Email" required style="border:none; background: rgba(255,0,0,0);border-bottom: 1.5px solid #16b4b9;">
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div>
+                <div>
+                    <p>Phone :</p>
+                    <input type="number" id="SDT" asp-for="SDT" placeholder="Your Number" required style="border:none; background: rgba(255,0,0,0);border-bottom: 1.5px solid #16b4b9;">
+                </div>
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div>
+                <p>Chú thích :</p>
+                <textarea name=""  asp-for="Feedback"cols="30" rows="10" style="border:none; background: rgba(255,0,0,0);border-bottom: 1.5px solid #16b4b9;"></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <a asp-action="Product" asp-controller="Cart">Back to List</a>
+        </div>
+    </form>
+
+
+</div>

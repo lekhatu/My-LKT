@@ -1,0 +1,47 @@
+﻿@model StoreApple.Models.UserRegistrationModel
+
+
+@{
+    Layout = null;
+}
+<html >
+<head>
+    <link href="~/style/login.css" rel="stylesheet" />
+    <title></title>
+
+
+</head>
+<body>
+
+
+    <main>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()"><a asp-action="Login" asp-controller="Account">Login </a> </button>
+                    <button type="button" class="toggle-btn" onclick="register()"><a asp-action="Register" asp-controller="Account">Register </a> </button>
+                </div>
+
+                <form id="login" class="input-group" asp-action="Register">
+                    <input type="text" class="input-field" placeholder="First Name" asp-for="FirstName" required>
+                    <input type="text" class="input-field" placeholder="Last Name" asp-for="LastName" required>
+                    <input type="email" class="input-field" placeholder="Email" asp-for="Email" required>
+                    <input type="password" class="input-field" placeholder="Enter Password" asp-for="Password" required>
+                    <input type="password" class="input-field" placeholder="Enter Confirm Password" asp-for="ConfirmPassword" required>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+
+
+            </div>
+</main>
+
+
+    @section Scripts {
+        <script src="~/js/js.js"></script>
+        @{await
+               Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

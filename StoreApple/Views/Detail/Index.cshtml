@@ -1,0 +1,113 @@
+﻿
+@model StoreApple.Models.ProductModel
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <main>
+        <div class="small-container single-product">
+            <div class="row">
+
+                <div class="col-2">
+                    <img src="~/images/@Model.ProductImage" width="100%" alt="Product">
+                </div>
+
+                <div class="col-2">
+                    <p>Home / iPhone</p>
+                    <h1> @Html.DisplayFor(model => model.ProductName)</h1>
+                    <h4> @Html.DisplayFor(model => model.ProductPrice)</h4>
+                    <select>
+                        <option value="">Select Memory</option>
+                        <option value="">64GB</option>
+                        <option value="">128GB</option>
+                        <option value="">256GB</option>
+                        <option value="">512GB</option>
+                    </select>
+                    <input type="number" value="1">
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@Model.ProductId" class="btn">Add To Cart</a>
+                    <h3>
+                        Product Details
+                        <i>
+                            <div class="fa fa-indent"></div>
+                        </i>
+                    </h3>
+                    <br>
+                    <p>@Html.DisplayFor(model => model.Descriptions)</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!--------title------------>
+
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>Related Products</h2>
+                <p>View More</p>
+            </div>
+        </div>
+
+        <!--------------Product-------------->
+
+
+        <div class="small-container">
+
+
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="~/images/ip11.jpg">
+                    <h4>iPhone 11</h4>
+                    <div class="rating">
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star-o"></div></i>
+                    </div>
+                    <p>800$</p>
+                </div>
+                <div class="col-4">
+                    <img src="~/images/ip11.jpg">
+                    <h4>iPhone 11</h4>
+                    <div class="rating">
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star-half-o"></div></i>
+                        <i><div class="fa fa-star-o"></div></i>
+                    </div>
+                    <p>800$</p>
+                </div>
+                <div class="col-4">
+                    <img src="~/images/ip11.jpg">
+                    <h4>iPhone 11</h4>
+                    <div class="rating">
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star-half-o"></div></i>
+                    </div>
+                    <p>800$</p>
+                </div>
+                <div class="col-4">
+                    <img src="~/images/ip11.jpg">
+                    <h4>iPhone 11</h4>
+                    <div class="rating">
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star"></div></i>
+                        <i><div class="fa fa-star-o"></div></i>
+                    </div>
+                    <p>800$</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
